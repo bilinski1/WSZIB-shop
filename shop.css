@@ -1,0 +1,76 @@
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.menuitem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.products {
+    width: 70%;
+    background-color: gray;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.productcard {
+    background-color: white;
+    height: auto;
+}
+
+.basket {
+    width: auto;
+    background-color: white;
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+.button {
+    background-color: #555555; 
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 5px;
+  }
+
+  .rembutton {
+    background-color: grey; 
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 5px;
+  }
+
+  .rem {
+    padding-bottom: 5px;
+  }
+
+  .price {
+    padding: 5px;
+  }
