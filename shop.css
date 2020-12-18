@@ -20,18 +20,25 @@
 
 .products {
     width: 70%;
-    background-color: gray;
+    background-color: white;
     display: flex;
     flex-wrap: wrap;
+    justify-content: left;
 }
 
 .productcard {
     background-color: white;
     height: auto;
+    padding: 10px;
+
+}
+
+.name {
+    text-align: center;
 }
 
 .basket {
-    width: auto;
+    width: 200px;
     background-color: white;
     text-align: center;
 }
@@ -41,6 +48,7 @@
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
+    word-wrap: break-word;
 }
 
 .button {
@@ -55,15 +63,20 @@
     border-radius: 5px;
   }
 
+  .add {
+    background-color: black; 
+    color: white;
+    border-radius: 5px;
+  }
+
   .rembutton {
     background-color: grey; 
     border: none;
     color: white;
-    padding: 10px 30px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 12px;
+    font-size: 16px;
     border-radius: 5px;
   }
 
@@ -74,3 +87,5 @@
   .price {
     padding: 5px;
   }
+
+  
