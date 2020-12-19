@@ -14,6 +14,8 @@ function funkcjaDodaj(event) {
   var productlist = document.getElementById("productlist");
   var productrow = document.createElement('div');
   productrow.classList.add('productrow');
+  var maximumitems = document.getElementsByClassName("productrow").length;
+  if (maximumitems < 8) {
   var productinbasket = `
     <div class="cart-item price">
     <span class="title">Nazwa: ${productname}<br></span>
@@ -27,7 +29,9 @@ function funkcjaDodaj(event) {
     productrow.innerHTML = productinbasket;
     productlist.append(productrow);
     // Adding Event Listener to Remove Button
-    productrow.getElementsByClassName("removebutton")[0].addEventListener("click", removeitem)
+    productrow.getElementsByClassName("removebutton")[0].addEventListener("click", removeitem);
+    this.classList.remove('productrow');
+    }
     updateTotal()
 }
 
@@ -45,25 +49,6 @@ function updateTotal() {
   document.getElementsByClassName('totalsum')[0].innerText = total + "Zł"
 }
 
-// Displaying Alert after clicking buy button
-var buybutton = document.getElementById("buy");
-buybutton.addEventListener("click", funkcjaKup);
-function funkcjaKup() {
-  var totalsum =  document.getElementsByClassName("totalsum")[0]
-  var price = parseFloat(totalsum.innerText)
-  window.alert ("Dokonałeś zakupu na kwotę: " + price + " zł");
-}
-
-
-// Removing item from the basket
-function removeitem(event) {
-  rem = event.target
-  rem.parentElement.parentElement.remove();
-  console.log("element usuniety");
-  updateTotal();
-  }
-
-
 // Clearing product list in the basket
 var clearbutton = document.getElementById("clear");
 clearbutton.addEventListener('click', funkcjaClear);
@@ -73,4 +58,26 @@ function funkcjaClear() {
   productlist.innerHTML = clear;
   updateTotal()
 }
+
+// Displaying Alert after clicking buy button
+var buybutton = document.getElementById("buy");
+buybutton.addEventListener("click", funkcjaKup);
+function funkcjaKup() {
+  var totalsum =  document.getElementsByClassName("totalsum")[0]
+  var price = parseFloat(totalsum.innerText)
+  window.alert ("Dokonałeś zakupu na kwotę: " + price + " zł");
+  funkcjaClear()
+}
+
+
+// Removing item from the basket
+function removeitem(event) {
+  rem = event.target
+  rem.parentElement.parentElement.remove();
+  console.log("element usuniety");
+  updateTotal()
+  }
+
+
+
 
